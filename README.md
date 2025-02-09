@@ -1,2 +1,3 @@
-# cv-application
-A web app to create personal resumes.
+# CV Application
+
+A simple react app that lets you create resumes.
