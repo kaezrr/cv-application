@@ -1,0 +1,23 @@
+.details,
+.resume {
+  background-color: #3c3d37;
+  padding: 20px;
+}
+
+.personal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr;
+  gap: 20px;
+}
+
+input {
+  font-size: 1rem;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 15px;
+}
+
+input:focus {
+  outline: none;
+}

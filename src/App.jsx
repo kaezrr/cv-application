@@ -1,8 +1,16 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
+
+import Resume from "./components/Resume";
+import DetailsForm from "./components/DetailsForm";
 
 function App() {
-  return <h1>Holy Fuck</h1>;
+  return (
+    <>
+      <DetailsForm />
+      <Resume />
+    </>
+  );
 }
 
 export default App;

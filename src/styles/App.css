@@ -1,0 +1,12 @@
+#root {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  flex: 1;
+
+  display: grid;
+  min-height: 100vh;
+  gap: 2vw;
+  grid-template-columns: 1fr 2fr;
+}
