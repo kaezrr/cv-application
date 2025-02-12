@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function EducationDetails({
   heading,
   formName,
@@ -18,7 +16,10 @@ export default function EducationDetails({
           onClick={() => change(open ? "" : formName)}
         />
       </div>
-      <form className={formName + (open ? " open" : "")}>{children}</form>
+      <form className={formName + (open ? " open" : "")}>
+        {children}
+        <button>Submit</button>
+      </form>
     </section>
   );
 }

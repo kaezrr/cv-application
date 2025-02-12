@@ -8,5 +8,10 @@
   display: grid;
   height: 100vh;
   gap: 2vw;
+  grid-template-rows: 1fr 12fr;
   grid-template-columns: 1fr 2fr;
+}
+
+#root > h1 {
+  margin: 0;
 }
