@@ -62,9 +62,9 @@ export default function EducationForm(props) {
         target[i + 3].value,
         target[i + 0].dataset.index,
       );
-      setData(newData);
-      resumeData.education = newData;
     }
+    setData(newData);
+    resumeData.education = newData;
   }
 
   function deleteItem(i) {
