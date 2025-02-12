@@ -1,3 +1,5 @@
+import { add } from "date-fns";
+
 const resumeData = {
   personal: {},
   education: [],
@@ -40,7 +42,7 @@ export function addJob(data, company, role, desc, start, end, index = null) {
   index ? (data[index] = newData) : data.push(newData);
 }
 
-export function addProject(data, name, desc, link, index = null) {
+export function addProject(data, name, link, desc, index = null) {
   const newData = {
     name,
     description: desc,
@@ -49,28 +51,3 @@ export function addProject(data, name, desc, link, index = null) {
   };
   index ? (data[index] = newData) : data.push(newData);
 }
-
-addJob(
-  resumeData.jobs,
-  "LinkedIn",
-  "Data Analyst",
-  "Some desc",
-  new Date(),
-  new Date(),
-);
-addJob(
-  resumeData.jobs,
-  "Spotify",
-  "Music Analyst",
-  "Some desc",
-  new Date(),
-  new Date(),
-);
-addJob(
-  resumeData.jobs,
-  "Newegg",
-  "Some egging",
-  "edging desc",
-  new Date(),
-  new Date(),
-);

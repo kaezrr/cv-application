@@ -1,5 +1,5 @@
 import { useState } from "react";
-import resumeData, { addJob, addProject } from "../data";
+import resumeData, { addJob } from "../data";
 import InfoSection from "./InfoSection";
 import { format } from "date-fns";
 
