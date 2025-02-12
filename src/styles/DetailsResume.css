@@ -5,6 +5,12 @@
   border-radius: 10px;
 }
 
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .top-head > h2 {
   margin: 0px;
   text-align: unset;
@@ -21,11 +27,11 @@
   transition: transform 0.3s;
 }
 
-.top-head > img.down {
+.top-head > img.open {
   transform: rotateZ(0.5turn);
 }
 
-.personal {
+.info-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -34,19 +40,19 @@
   border-radius: 10px;
 }
 
-.personal > form {
+.personal {
   display: none;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 3fr;
   gap: 20px;
 }
 
-form.open {
+.personal.open {
   display: grid;
 }
 
-form > .phone,
-form > .email {
+.personal > .phone,
+.personal > .email {
   grid-column: 1 / 3;
 }
 

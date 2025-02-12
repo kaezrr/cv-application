@@ -1,12 +1,12 @@
 import "./styles/App.css";
 
 import Resume from "./components/Resume";
-import DetailsForm from "./components/DetailsForm";
+import Details from "./components/Details";
 
 function App() {
   return (
     <>
-      <DetailsForm />
+      <Details />
       <Resume />
     </>
   );
