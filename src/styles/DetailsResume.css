@@ -1,19 +1,60 @@
 .details,
 .resume {
-  background-color: #3c3d37;
-  padding: 20px;
+  background-color: #181c14;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.top-head > h2 {
+  margin: 0px;
+  text-align: unset;
+}
+
+.top-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-head > img {
+  width: 32px;
+  transition: transform 0.3s;
+}
+
+.top-head > img.down {
+  transform: rotateZ(0.5turn);
 }
 
 .personal {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #3c3d37;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.personal > form {
+  display: none;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 3fr;
   gap: 20px;
 }
 
+form.open {
+  display: grid;
+}
+
+form > .phone,
+form > .email {
+  grid-column: 1 / 3;
+}
+
 input {
+  box-sizing: border-box;
   font-size: 1rem;
   border: none;
+  width: 100%;
   border-radius: 15px;
   padding: 8px 15px;
 }
