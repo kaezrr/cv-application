@@ -1,17 +1,20 @@
 import InfoSection from "./InfoSection";
-import resumeData, { updatePersonal } from "../data.js";
+import { updatePersonal } from "../data.js";
 
-export default function PersonalForm(props) {
-  const data = resumeData.personal;
+export default function PersonalForm({ open, change, resume, setResume }) {
+  const data = resume.personal;
   const handleSubmit = (e) => {
     e.preventDefault();
     const target = e.target;
+    let newData = { ...resume };
     updatePersonal(
+      newData,
       target[0].value,
       target[1].value,
       target[2].value,
       target[3].value,
     );
+    setResume(newData);
   };
 
   return (
@@ -19,7 +22,8 @@ export default function PersonalForm(props) {
       heading="Personal Info"
       formName="personal"
       handleSubmit={handleSubmit}
-      {...props}
+      open={open}
+      change={change}
     >
       <input placeholder="First Name" defaultValue={data.firstName} />
       <input placeholder="Last Name" defaultValue={data.lastName} />

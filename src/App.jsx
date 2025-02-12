@@ -4,14 +4,17 @@ import "./styles/Resume.css";
 
 import Resume from "./components/Resume";
 import Details from "./components/Details";
+import resumeData from "./data";
+import { useState } from "react";
 
 export default function App() {
+  const [resume, setResume] = useState(resumeData);
   return (
     <>
       <h1>Your Details</h1>
       <h1>Your Resume</h1>
-      <Details />
-      <Resume />
+      <Details resume={resume} setResume={setResume} />
+      <Resume resume={resume} />
     </>
   );
 }

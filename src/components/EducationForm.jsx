@@ -1,5 +1,5 @@
 import InfoSection from "./InfoSection";
-import resumeData, { addSchool } from "../data";
+import { addSchool } from "../data";
 import { format } from "date-fns";
 import { useState } from "react";
 
@@ -45,17 +45,17 @@ function School({
   );
 }
 
-export default function EducationForm(props) {
-  const [data, setData] = useState(resumeData.education);
+export default function EducationForm({ open, change, resume, setResume }) {
+  const [data, setData] = useState(resume.education);
   const [itemCount, setItemCount] = useState(data.length);
 
   function handleSubmit(e) {
     e.preventDefault();
     const target = e.target;
-    let newData = [...data];
+    let newData = { ...resume };
     for (let i = 0; i < itemCount * 4; i += 4) {
       addSchool(
-        newData,
+        newData.education,
         target[i + 0].value,
         target[i + 1].value,
         target[i + 2].value,
@@ -63,15 +63,15 @@ export default function EducationForm(props) {
         target[i + 0].dataset.index,
       );
     }
-    setData(newData);
-    resumeData.education = newData;
+    setData(newData.education);
+    setResume(newData);
   }
 
   function deleteItem(i) {
-    let newData = [...data];
-    newData.splice(i, 1);
-    setData(newData);
-    resumeData.education = newData;
+    let newData = { ...resume };
+    newData.education.splice(i, 1);
+    setData(newData.education);
+    setResume(newData);
   }
 
   return (
@@ -79,7 +79,8 @@ export default function EducationForm(props) {
       heading="Education Info"
       formName="education"
       handleSubmit={handleSubmit}
-      {...props}
+      open={open}
+      change={change}
     >
       {data.map((edu, i) => (
         <School

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import resumeData, { addJob } from "../data";
+import { addJob } from "../data";
 import InfoSection from "./InfoSection";
 import { format } from "date-fns";
 
@@ -45,17 +45,17 @@ function Job({
   );
 }
 
-export default function JobForm(props) {
-  const [data, setData] = useState(resumeData.jobs);
+export default function JobForm({ open, change, resume, setResume }) {
+  const [data, setData] = useState(resume.jobs);
   const [itemCount, setItemCount] = useState(data.length);
 
   function handleSubmit(e) {
     e.preventDefault();
     const target = e.target;
-    let newData = [...data];
+    let newData = { ...resume };
     for (let i = 0; i < itemCount * 5; i += 5) {
       addJob(
-        newData,
+        newData.jobs,
         target[i + 0].value,
         target[i + 1].value,
         target[i + 2].value,
@@ -64,15 +64,15 @@ export default function JobForm(props) {
         target[i + 0].dataset.index,
       );
     }
-    setData(newData);
-    resumeData.jobs = newData;
+    setData(newData.jobs);
+    setResume(newData);
   }
 
   function deleteItem(i) {
-    let newData = [...data];
-    newData.splice(i, 1);
-    setData(newData);
-    resumeData.jobs = newData;
+    let newData = { ...resume };
+    newData.jobs.splice(i, 1);
+    setData(newData.jobs);
+    setResume(newData);
   }
 
   return (
@@ -80,7 +80,8 @@ export default function JobForm(props) {
       heading="Job History"
       formName="jobs"
       handleSubmit={handleSubmit}
-      {...props}
+      open={open}
+      change={change}
     >
       {data.map((job, i) => (
         <Job

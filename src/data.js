@@ -1,5 +1,3 @@
-import { add } from "date-fns";
-
 const resumeData = {
   personal: {},
   education: [],
@@ -9,8 +7,8 @@ const resumeData = {
 
 export default resumeData;
 
-export function updatePersonal(firstName, lastName, phone, email) {
-  resumeData.personal = {
+export function updatePersonal(data, firstName, lastName, phone, email) {
+  data.personal = {
     name: `${firstName} ${lastName}`,
     firstName,
     lastName,
@@ -52,7 +50,13 @@ export function addProject(data, name, link, desc, index = null) {
   index ? (data[index] = newData) : data.push(newData);
 }
 
-updatePersonal("John", "Doe", "123-456-7890", "john.doe@example.com");
+updatePersonal(
+  resumeData,
+  "John",
+  "Doe",
+  "123-456-7890",
+  "john.doe@example.com",
+);
 
 // Education entries using Date objects
 addSchool(

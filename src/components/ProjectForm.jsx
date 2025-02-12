@@ -1,5 +1,5 @@
 import { useState } from "react";
-import resumeData, { addProject } from "../data";
+import { addProject } from "../data";
 import InfoSection from "./InfoSection";
 
 function Project({
@@ -38,32 +38,32 @@ function Project({
   );
 }
 
-export default function ProjectForm(props) {
-  const [data, setData] = useState(resumeData.projects);
+export default function ProjectForm({ open, change, resume, setResume }) {
+  const [data, setData] = useState(resume.projects);
   const [itemCount, setItemCount] = useState(data.length);
 
   function handleSubmit(e) {
     e.preventDefault();
     const target = e.target;
-    let newData = [...data];
+    let newData = { ...resume };
     for (let i = 0; i < itemCount * 3; i += 3) {
       addProject(
-        newData,
+        newData.projects,
         target[i + 0].value,
         target[i + 1].value,
         target[i + 2].value,
         target[i + 0].dataset.index,
       );
     }
-    setData(newData);
-    resumeData.jobs = newData;
+    setData(newData.projects);
+    setResume(newData);
   }
 
   function deleteItem(i) {
-    let newData = [...data];
-    newData.splice(i, 1);
-    setData(newData);
-    resumeData.jobs = newData;
+    let newData = { ...resume };
+    newData.projects.splice(i, 1);
+    setData(newData.projects);
+    setResume(newData);
   }
 
   return (
@@ -71,7 +71,8 @@ export default function ProjectForm(props) {
       heading="Projects"
       formName="projects"
       handleSubmit={handleSubmit}
-      {...props}
+      open={open}
+      change={change}
     >
       {data.map((proj, i) => (
         <Project
