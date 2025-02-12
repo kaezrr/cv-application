@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-export default function EducationDetails({ heading, formName, children }) {
-  const [open, setOpen] = useState(false);
+export default function EducationDetails({
+  heading,
+  formName,
+  children,
+  open,
+  change,
+}) {
   return (
     <section className="info-form">
       <div className="top-head">
@@ -10,7 +15,7 @@ export default function EducationDetails({ heading, formName, children }) {
           src="/down.svg"
           alt="down"
           className={open ? "open" : ""}
-          onClick={() => setOpen(!open)}
+          onClick={() => change(open ? "" : formName)}
         />
       </div>
       <form className={formName + (open ? " open" : "")}>{children}</form>

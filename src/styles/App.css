@@ -6,7 +6,7 @@
   flex: 1;
 
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
   gap: 2vw;
   grid-template-columns: 1fr 2fr;
 }
