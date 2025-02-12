@@ -1,4 +1,5 @@
 import InfoSection from "./InfoSection";
+import resumeData from "../data";
 
 function School({ title }) {
   return (
@@ -14,9 +15,9 @@ function School({ title }) {
 }
 
 export default function EducationForm(props) {
+  const data = resumeData.education;
   return (
     <InfoSection heading="Education Info" formName="education" {...props}>
-      <School title="School 1" />
       <div className="button-container">
         <button>Submit</button>
         <button>Add New</button>
