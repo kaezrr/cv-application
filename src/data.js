@@ -1,11 +1,13 @@
-export default resumeData = {
+const resumeData = {
   personal: {},
   education: [],
   jobs: [],
   projects: [],
 };
 
-export function addName(firstName, lastName, phone, email) {
+export default resumeData;
+
+export function updatePersonal(firstName, lastName, phone, email) {
   resumeData.personal = {
     name: `${firstName} ${lastName}`,
     firstName,
@@ -15,14 +17,22 @@ export function addName(firstName, lastName, phone, email) {
   };
 }
 
-export function addSchool(school, degree, startDate, endDate) {
-  resumeData.education.push({
+export function addSchool(
+  data,
+  school,
+  degree,
+  startDate,
+  endDate,
+  index = null,
+) {
+  const newData = {
     school,
     degree,
     startDate,
     endDate,
     id: crypto.randomUUID(),
-  });
+  };
+  index ? (data[index] = newData) : data.push(newData);
 }
 
 export function addJob(company, role, description, startDate, endDate) {

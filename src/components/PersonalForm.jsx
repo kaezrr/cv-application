@@ -1,11 +1,17 @@
 import InfoSection from "./InfoSection";
-import resumeData from "../data.js";
+import resumeData, { updatePersonal } from "../data.js";
 
 export default function PersonalForm(props) {
   const data = resumeData.personal;
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const target = e.target;
+    updatePersonal(
+      target[0].value,
+      target[1].value,
+      target[2].value,
+      target[3].value,
+    );
   };
 
   return (

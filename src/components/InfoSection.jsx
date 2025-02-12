@@ -1,4 +1,4 @@
-export default function EducationDetails({
+export default function InfoSection({
   heading,
   formName,
   children,
