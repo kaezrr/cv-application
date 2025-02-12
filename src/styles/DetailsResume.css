@@ -1,3 +1,8 @@
+h3 {
+  margin: 0;
+  text-align: left;
+}
+
 .details,
 .resume {
   background-color: #181c14;
@@ -24,8 +29,18 @@
   align-items: center;
 }
 
-.top-head > img {
+img {
   width: 32px;
+  justify-self: flex-end;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+section > img:hover {
+  transform: scale(1.2);
+}
+
+.top-head > img {
   transition: transform 0.3s;
 }
 
@@ -42,37 +57,49 @@
   border-radius: 10px;
 }
 
+.education.open,
+.jobs.open,
+.projects.open {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 form {
   display: none;
 }
 
-form.open {
+.personal.open,
+.education > section,
+.jobs > section,
+.projects > section {
   display: grid;
-}
-
-.personal,
-.education,
-.jobs,
-.projects {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-#school,
-#degree,
+.school-name,
+.degree,
 #phone,
-#job-description,
-#project-description,
-#project-link,
+.job-description,
+.project-description,
 #email,
-#project-title,
-form > button {
+.personal > button {
   grid-column: 1 / 3;
 }
 
-form > button {
-  justify-self: center;
-  width: 50%;
+.personal > button {
+  margin: auto;
+  width: 40%;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.button-container > button {
+  flex: 1;
 }
 
 textarea,

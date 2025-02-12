@@ -4,6 +4,7 @@ export default function EducationDetails({
   children,
   open,
   change,
+  handleSubmit,
 }) {
   return (
     <section className="info-form">
@@ -16,9 +17,11 @@ export default function EducationDetails({
           onClick={() => change(open ? "" : formName)}
         />
       </div>
-      <form className={formName + (open ? " open" : "")}>
+      <form
+        className={formName + (open ? " open" : "")}
+        onSubmit={handleSubmit}
+      >
         {children}
-        <button>Submit</button>
       </form>
     </section>
   );
