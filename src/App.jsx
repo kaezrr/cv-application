@@ -1,4 +1,6 @@
 import "./styles/App.css";
+import "./styles/Details.css";
+import "./styles/Resume.css";
 
 import Resume from "./components/Resume";
 import Details from "./components/Details";

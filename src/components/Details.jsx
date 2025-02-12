@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/DetailsResume.css";
 
 import PersonalForm from "./PersonalForm";
 import EducationForm from "./EducationForm";
