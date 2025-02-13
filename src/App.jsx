@@ -11,8 +11,6 @@ export default function App() {
   const [resume, setResume] = useState(resumeData);
   return (
     <>
-      <h1>Your Details</h1>
-      <h1>Your Resume</h1>
       <Details resume={resume} setResume={setResume} />
       <Resume resume={resume} />
     </>

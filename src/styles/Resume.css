@@ -1,0 +1,92 @@
+.resume {
+  font-family: "Times New Roman", Times, serif;
+  padding: 0.5in;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.resume h2 {
+  margin: 0;
+  font-size: 32px;
+  grid-column: 1/ 4;
+}
+
+.resume p {
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0;
+  font-size: 18px;
+}
+
+.icon-title > img {
+  height: 24px;
+}
+
+.icon-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.education-info,
+.job-info,
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.school-display,
+.job-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 0.3in;
+}
+
+.project-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0.3in;
+}
+
+.project-display img {
+  width: 16px;
+}
+
+.school-display > h3,
+.job-display > h3,
+.project-display > h3 {
+  font-weight: normal;
+  display: flex;
+  gap: 10px;
+}
+
+.school-display > p:first-of-type,
+.job-display > p:first-of-type {
+  justify-self: flex-end;
+}
+
+.school-display > p:last-of-type,
+.job-display > p:nth-of-type(2) {
+  justify-self: flex-start;
+}
+
+.job-display > p:last-of-type {
+  padding-left: 0.2in;
+}
+
+hr {
+  width: 100%;
+}

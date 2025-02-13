@@ -13,6 +13,7 @@ export default function PersonalForm({ open, change, resume, setResume }) {
       target[1].value,
       target[2].value,
       target[3].value,
+      target[4].value,
     );
     setResume(newData);
   };
@@ -39,6 +40,7 @@ export default function PersonalForm({ open, change, resume, setResume }) {
         id="email"
         defaultValue={data.email}
       />
+      <input placeholder="Location" id="address" defaultValue={data.address} />
       <button>Submit</button>
     </InfoSection>
   );

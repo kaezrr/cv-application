@@ -7,13 +7,14 @@ const resumeData = {
 
 export default resumeData;
 
-export function updatePersonal(data, firstName, lastName, phone, email) {
+export function updatePersonal(data, first, last, phone, email, address) {
   data.personal = {
-    name: `${firstName} ${lastName}`,
-    firstName,
-    lastName,
+    name: `${first} ${last}`,
+    firstName: first,
+    lastName: last,
     phone,
     email,
+    address,
   };
 }
 
@@ -56,6 +57,7 @@ updatePersonal(
   "Doe",
   "123-456-7890",
   "john.doe@example.com",
+  "London, UK",
 );
 
 // Education entries using Date objects
